@@ -1,47 +1,35 @@
 # Deploy to GitHub Pages
 
-Your SLAB Vite app is configured for GitHub Pages deployment.
+## Step 1: Set up GitHub Pages
 
-## Option 1: GitHub Actions (automatic)
+1. Go to your repo: **https://github.com/Santhusha-bit/SriLankansAtBerkeley**
+2. Click **Settings** → **Pages**
+3. Under **Source**, choose **Deploy from a branch**
+4. Under **Branch**, select **gh-pages** and **/ (root)**
+5. Click **Save**
 
-A workflow at `.github/workflows/deploy.yml` builds and deploys on every push to `main` or `master`.
+## Step 2: Enable workflow permissions
 
-1. **Enable GitHub Pages** in your repo:
-   - Go to **Settings** → **Pages**
-   - Under **Source**, select **GitHub Actions**
+1. **Settings** → **Actions** → **General**
+2. Under **Workflow permissions**, select **Read and write permissions**
+3. Click **Save**
 
-2. **Push your code**:
-   ```bash
-   git add .
-   git commit -m "Deploy"
-   git push origin main
-   ```
+## Step 3: Push to trigger deploy
 
-3. The workflow runs automatically. Check **Actions** for status.
-
-4. Site URL: `https://<username>.github.io/SriLankansAtBerkeley/`
-
-## Option 2: Manual deploy with npm
-
-1. **Deploy**:
-   ```bash
-   npm run deploy
-   ```
-
-2. **Enable GitHub Pages** in your repo:
-   - **Settings** → **Pages** → Source: **Deploy from a branch**
-   - Branch: `gh-pages` → Save
-
-## Repo Name
-
-If your repo has a **different name** than `SriLankansAtBerkeley`, update `vite.config.js`:
-
-```js
-base: '/your-repo-name/',  // must include leading and trailing slash
+```bash
+git add .
+git commit -m "Deploy"
+git push origin main
 ```
 
-## Troubleshooting
+The workflow runs on push to `main` (or `master`). After 1–2 minutes, your site will be at:
 
-- **404 on refresh / direct link to /blog**: The `postbuild` script copies `index.html` to `404.html` so GitHub Pages serves the SPA for all routes.
-- **Blank page or broken assets**: Ensure `base` in `vite.config.js` matches your repo name exactly.
-- **First deploy**: Allow a few minutes for GitHub Pages to build. Check **Actions** tab for deploy status.
+**https://santhusha-bit.github.io/SriLankansAtBerkeley/**
+
+## Manual deploy (alternative)
+
+```bash
+npm run deploy
+```
+
+Then ensure **Settings** → **Pages** → Source is **Deploy from a branch** → **gh-pages**.
