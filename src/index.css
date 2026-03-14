@@ -1,0 +1,79 @@
+/* Sri Lankan Flag Colors - Cultural Theme */
+:root {
+  /* Primary Flag Colors */
+  --maroon: #8D153A;
+  --maroon-dark: #6b0f2b;
+  --maroon-light: #a91a47;
+  --saffron: #EB7400;
+  --saffron-light: #ff8c1a;
+  --green: #00534E;
+  --green-light: #007066;
+  --yellow: #FFBE29;
+  --yellow-light: #ffd055;
+  --yellow-dark: #B8860B;
+  --black: #1a1a1a;
+  
+  /* Semantic */
+  --bg-cream: #f8f4e0;
+  --bg-warm: #faf5ef;
+  --text-dark: #2d2d2d;
+  --text-muted: #5c5c5c;
+  
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor scroll offset for fixed navbar */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Sri Lankan traditional pattern - subtle background (25% dark yellow) */
+.sri-pattern {
+  background-color: var(--bg-cream);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(235, 116, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 83, 78, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 48%, rgba(255, 190, 41, 0.05) 49%, rgba(255, 190, 41, 0.05) 51%, transparent 52%);
+  background-size: 100% 100%, 100% 100%, 60px 60px;
+}
+
+/* Decorative border - inspired by traditional Kandyan design */
+.kandyan-border {
+  position: relative;
+}
+.kandyan-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--saffron), var(--maroon), var(--green), transparent);
+  border-radius: 2px;
+}
