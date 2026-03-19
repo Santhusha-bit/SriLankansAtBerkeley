@@ -17,7 +17,7 @@ export default function About() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <h1>About Us</h1>
-          <p>Our mission, history, and the people behind Sri Lankan at Berkeley</p>
+          <p>Our mission, history, and the people behind Sri Lankans at Berkeley</p>
         </motion.div>
       </section>
 
@@ -31,7 +31,7 @@ export default function About() {
           >
             <h2>Our Story</h2>
             <p className="lead">
-              Sri Lankan at Berkeley (SLAB) is a student organization at the University of California, Berkeley, 
+              Sri Lankans at Berkeley (SLAB) is a student organization at the University of California, Berkeley, 
               dedicated to creating a welcoming space for students with connections to Sri Lanka and those 
               interested in Sri Lankan culture.
             </p>
@@ -65,10 +65,10 @@ export default function About() {
             <h2>What We Value</h2>
             <div className="values-list">
               {[
-                'Inclusivity — All backgrounds welcome',
-                'Cultural Pride — Celebrating our heritage',
-                'Community — Building lasting connections',
-                'Respect — Honoring diversity within Sri Lanka',
+                'Inclusivity - All backgrounds welcome',
+                'Cultural Pride - Celebrating our heritage',
+                'Community - Building lasting connections',
+                'Respect - Honoring diversity within Sri Lanka',
               ].map((val, i) => (
                 <motion.div 
                   key={val}
@@ -91,7 +91,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p>Interested in getting involved? Reach out to us—we'd love to have you!</p>
+            <p>Interested in getting involved? Reach out to us; we would love to have you!</p>
           </motion.div>
         </div>
       </section>

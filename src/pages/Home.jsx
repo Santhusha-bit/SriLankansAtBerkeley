@@ -2,29 +2,61 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import PhotoCarousel from '../components/PhotoCarousel'
+import awuruduHero from '../../images/projects/awurudu/DSC_0251.jpg'
+import cultureCuisine from '../../images/cuisine.jpg'
+import cultureArts from '../../images/arts.jpg'
+import cultureReligion from '../../images/religions.jpg'
+import cultureSports from '../../images/sports.jpg'
+import flyerCareerPanel from '../../images/projects/awurudu/DSC_0080.jpg'
+import flyerAwurudu from '../../images/projects/awurudu/DSC_0251.jpg'
+import offerEvents from '../../images/projects/awurudu/DSC_0177.jpg'
+import offerCommunity from '../../images/projects/awurudu/DSC_0123.jpg'
+import offerHeritage from '../../images/projects/awurudu/DSC_0045.jpg'
+import highlightOcean from '../../images/projects/awurudu/DSC_0062.jpg'
+import highlightHistory from '../../images/projects/awurudu/DSC_0129.jpg'
+import highlightNature from '../../images/projects/awurudu/DSC_0077.jpg'
+import highlightTea from '../../images/projects/awurudu/DSC_0079.jpg'
+
+// Ensures ESLint counts `motion` as used (JSX tags alone may not).
+const _MOTION = motion
 
 const events = [
-  { id: 1, title: 'General Meeting', date: 'Feb 15, 2025', time: '6:00 PM', location: 'Dwinelle Hall', description: 'Join us for our monthly general meeting. Meet the board, learn about upcoming events, and connect with fellow Sri Lankans.', type: 'Meeting' },
-  { id: 2, title: 'Sinhala & Tamil New Year (Avurudu)', date: 'Apr 13, 2025', time: '12:00 PM', location: 'Memorial Glade', description: 'Celebrate the dawn of the new year with traditional games, kiribath, kavum, and cultural performances. All welcome!', type: 'Festival' },
-  { id: 3, title: 'Sri Lankan Movie Night', date: 'Mar 8, 2025', time: '7:00 PM', location: 'TBD', description: 'Screening of a beloved Sri Lankan film. Snacks and discussion to follow.', type: 'Cultural' },
-  { id: 4, title: 'Vesak Celebration', date: 'May 12, 2025', time: '5:00 PM', location: 'Sproul Plaza', description: 'Commemorate Vesak with lantern making, meditation, and a talk on Buddhism in Sri Lanka.', type: 'Festival' },
-  { id: 5, title: 'End of Year Dinner', date: 'May 2, 2025', time: '6:30 PM', location: 'TBD', description: 'Celebrate the year together with a festive Sri Lankan dinner. Awards and farewells.', type: 'Social' },
+  {
+    id: 1,
+    title: 'Career Insight Panel',
+    date: 'Apr 4, 2026',
+    time: '12:00 PM - 2:00 PM',
+    location: 'UC Berkeley',
+    description: 'Hear from Sri Lankan professionals and alumni about careers, internships, and navigating opportunities. Bring your questions and network with the community.',
+    type: 'Panel',
+    flyer: flyerCareerPanel,
+  },
+  {
+    id: 2,
+    title: 'Awurudu Festival 2026',
+    date: 'Apr 11, 2026',
+    time: '4:00 PM onwards',
+    location: 'UC Berkeley Glade',
+    description: 'Celebrate Sinhala & Tamil New Year with traditional games, kiribath, kavum, and performances. All are welcome: bring friends and good vibes!',
+    type: 'Festival',
+    flyer: flyerAwurudu,
+  },
 ]
 
-const eventColors = { Meeting: 'var(--maroon)', Festival: 'var(--saffron)', Cultural: 'var(--green)', Social: 'var(--yellow)' }
+const eventColors = { Panel: 'var(--green)', Festival: 'var(--saffron)' }
 
 const highlights = [
-  { title: 'Pearl of the Indian Ocean', desc: 'Sri Lanka has been known by this name for centuries, famed for its precious gems, spices, and natural beauty.' },
-  { title: 'Ancient Civilization', desc: 'Over 2,500 years of recorded history, from the kingdoms of Anuradhapura and Polonnaruwa to the Kandyan Kingdom.' },
-  { title: 'Biodiversity Hotspot', desc: 'One of the world\'s biodiversity hotspots with unique wildlife including elephants, leopards, and endemic species.' },
-  { title: 'Tea Country', desc: 'The birthplace of Ceylon tea, with lush highland estates producing some of the finest tea in the world.' },
+  { image: highlightOcean, title: 'Pearl of the Indian Ocean', desc: 'Sri Lanka has been known by this name for centuries, famed for its precious gems, spices, and natural beauty.' },
+  { image: highlightHistory, title: 'Ancient Civilization', desc: 'Over 2,500 years of recorded history, from the kingdoms of Anuradhapura and Polonnaruwa to the Kandyan Kingdom.' },
+  { image: highlightNature, title: 'Biodiversity Hotspot', desc: 'One of the world\'s biodiversity hotspots with unique wildlife including elephants, leopards, and endemic species.' },
+  { image: highlightTea, title: 'Tea Country', desc: 'The birthplace of Ceylon tea, with lush highland estates producing some of the finest tea in the world.' },
 ]
 
 const cultureItems = [
-  { emoji: '🍛', title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
-  { emoji: '🎭', title: 'Arts', text: 'Kandyan dance, traditional drumming, and intricate crafts including woodcarving and batik.' },
-  { emoji: '📿', title: 'Religion', text: 'A multi-religious society with Buddhism, Hinduism, Islam, and Christianity coexisting.' },
-  { emoji: '🏏', title: 'Sports', text: 'Cricket is a national passion—Sri Lanka has produced world champions and legendary players.' },
+  { image: cultureCuisine, title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
+  { image: cultureArts, title: 'Arts', text: 'Kandyan dance, traditional drumming, and intricate crafts including woodcarving and batik.' },
+  { image: cultureReligion, title: 'Religion', text: 'A multi-religious society with Buddhism, Hinduism, Islam, and Christianity coexisting.' },
+  { image: cultureSports, title: 'Sports', text: 'Cricket is a national passion; Sri Lanka has produced world champions and legendary players.' },
 ]
 
 export default function Home() {
@@ -45,6 +77,7 @@ export default function Home() {
     <div className="home">
       <section className="hero" id="home">
         <div className="hero-bg">
+          <img src={awuruduHero} alt="" className="hero-photo" />
           <div className="hero-gradient"></div>
           <div className="hero-pattern"></div>
         </div>
@@ -64,7 +97,7 @@ export default function Home() {
             ආයුබෝවන්! Vanakkam! Welcome!
           </motion.span>
           <h1>
-            Sri Lankan at <span className="highlight">Berkeley</span>
+            Sri Lankans at <span className="highlight">Berkeley</span>
           </h1>
           <p className="hero-subtitle">
             A vibrant community celebrating Sri Lankan heritage, culture, and fellowship at UC Berkeley
@@ -95,6 +128,48 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <section className="about-section" id="about">
+        <div className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            About Us
+          </motion.h2>
+          <motion.div
+            className="about-intro"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <p className="lead">
+              Sri Lankans at Berkeley (SLAB) is a student organization at the University of California, Berkeley,
+              dedicated to creating a welcoming space for students with connections to Sri Lanka and those
+              interested in Sri Lankan culture.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="about-grid"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="about-card">
+              <h3>Our Mission</h3>
+              <p>To preserve and celebrate Sri Lankan heritage while fostering community, cultural exchange, and mutual support among our members at Berkeley and beyond.</p>
+            </div>
+            <div className="about-card">
+              <h3>Our Vision</h3>
+              <p>To be a vibrant hub where Sri Lankan traditions meet Berkeley's diverse campus, creating lasting friendships and meaningful cultural connections.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <PhotoCarousel />
 
       <section className="features">
@@ -110,11 +185,10 @@ export default function Home() {
 
           <div className="features-grid">
             {[
-              { title: 'Cultural Events', desc: 'Celebrate Sinhala & Tamil New Year, Vesak, and traditional festivals', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&h=240&fit=crop', href: '#events' },
-              { title: 'Community', desc: 'Connect with fellow Sri Lankans and friends of Sri Lanka', image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=240&fit=crop', href: '#about' },
-              { title: 'Sri Lankan Heritage', desc: 'Explore the island\'s rich history, cuisine, and traditions', image: 'https://images.unsplash.com/photo-1580519542036-c47e619e319f?w=400&h=240&fit=crop', href: '#sri-lanka' },
-              { title: 'Stay Updated', desc: 'Read our latest news, stories, and campus happenings', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=240&fit=crop', href: '/blog' },
-            ].map((item, i) => (
+              { title: 'Cultural Events', desc: 'Celebrate Sinhala & Tamil New Year, Vesak, and traditional festivals', image: offerEvents, href: '#events' },
+              { title: 'Community', desc: 'Connect with fellow Sri Lankans and friends of Sri Lanka', image: offerCommunity, href: '#about' },
+              { title: 'Sri Lankan Heritage', desc: 'Explore the island\'s rich history, cuisine, and traditions', image: offerHeritage, href: '#sri-lanka' },
+             ].map((item, i) => (
               <motion.div
                 key={item.title}
                 className="feature-card"
@@ -140,115 +214,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="srilanka-photos">
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Beautiful Sri Lanka
-          </motion.h2>
-          <div className="photo-gallery">
-            {[
-              { src: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&h=400&fit=crop', alt: 'Sigiriya Rock Fortress', caption: 'Sigiriya Rock Fortress' },
-              { src: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600&h=400&fit=crop', alt: 'Ella tea country', caption: 'Tea plantations, Ella' },
-              { src: 'https://images.unsplash.com/photo-1580519542036-c47e619e319f?w=600&h=400&fit=crop', alt: 'Sri Lankan temple', caption: 'Temple of the Tooth, Kandy' },
-              { src: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&h=400&fit=crop', alt: 'South coast beaches', caption: 'Southern coastline' },
-              { src: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop', alt: 'Sri Lankan elephants', caption: 'Udawalawe National Park' },
-              { src: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop', alt: 'Traditional architecture', caption: 'Colonial Galle Fort' },
-            ].map((photo, i) => (
-              <motion.figure
-                key={photo.caption}
-                className="gallery-item"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.08 * i }}
-                whileHover={{ y: -6 }}
-              >
-                <img src={photo.src} alt={photo.alt} />
-                <figcaption>{photo.caption}</figcaption>
-              </motion.figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="about-section" id="about">
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            About Us
-          </motion.h2>
-          <motion.div
-            className="about-intro"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <p className="lead">
-              Sri Lankan at Berkeley (SLAB) is a student organization at the University of California, Berkeley,
-              dedicated to creating a welcoming space for students with connections to Sri Lanka and those
-              interested in Sri Lankan culture.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="about-grid"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="about-card">
-              <span className="about-icon">🎯</span>
-              <h3>Our Mission</h3>
-              <p>To preserve and celebrate Sri Lankan heritage while fostering community, cultural exchange, and mutual support among our members at Berkeley and beyond.</p>
-            </div>
-            <div className="about-card">
-              <span className="about-icon">💫</span>
-              <h3>Our Vision</h3>
-              <p>To be a vibrant hub where Sri Lankan traditions meet Berkeley's diverse campus, creating lasting friendships and meaningful cultural connections.</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="about-values"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h3>What We Value</h3>
-            <div className="values-list">
-              {[
-                'Inclusivity — All backgrounds welcome',
-                'Cultural Pride — Celebrating our heritage',
-                'Community — Building lasting connections',
-                'Respect — Honoring diversity within Sri Lanka',
-              ].map((val, i) => (
-                <motion.div
-                  key={val}
-                  className="value-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * i }}
-                >
-                  <span className="value-dot"></span>
-                  <span>{val}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="srilanka-section" id="sri-lanka">
         <div className="container">
           <motion.h2
@@ -265,9 +230,38 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Sri Lanka—formerly Ceylon—is an island nation in South Asia, rich in history, culture, and natural beauty.
+            Sri Lanka, formerly Ceylon, is an island nation in South Asia, rich in history, culture, and natural beauty.
             From ancient temples to tea plantations, pristine beaches to misty mountains, it continues to inspire our community at Berkeley.
           </motion.p>
+
+          <div className="youtube-embed">
+            <iframe
+              src="https://www.youtube.com/embed/PtqgMf0zNug"
+              title="Sri Lanka | 4K | The Jewel of Indian Ocean"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+
+          <div className="srilanka-map">
+            <iframe
+              title="Sri Lanka map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8199420.983506112!2d74.07421791138784!3d7.70484647492029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae171850f40ff2b%3A0x7c5c1030a0b0128d!2sSri%20Lanka!5e0!3m2!1sen!2sus!4v1773920000000!5m2!1sen!2sus"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Did You Know?
+          </motion.h2>
 
           <motion.div
             className="highlights-grid"
@@ -275,7 +269,6 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h3>Did You Know?</h3>
             {highlights.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -285,8 +278,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
               >
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
+                <div className="highlight-card-image">
+                  <img src={item.image} alt="" />
+                </div>
+                <div className="highlight-card-body">
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -297,7 +295,14 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h3>Culture & Traditions</h3>
+            <motion.h2
+              className="section-title"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              Culture & Traditions
+            </motion.h2>
             <div className="culture-grid">
               {cultureItems.map((item, i) => (
                 <motion.div
@@ -309,7 +314,9 @@ export default function Home() {
                   transition={{ delay: 0.05 * i }}
                   whileHover={{ scale: 1.03 }}
                 >
-                  <span className="culture-emoji">{item.emoji}</span>
+                  <div className="culture-card-image">
+                    <img src={item.image} alt="" />
+                  </div>
                   <h4>{item.title}</h4>
                   <p>{item.text}</p>
                 </motion.div>
@@ -341,20 +348,25 @@ export default function Home() {
                 transition={{ delay: 0.1 * i }}
                 whileHover={{ x: 8 }}
               >
-                <div
-                  className="event-date-block"
-                  style={{ borderColor: eventColors[event.type] }}
-                >
-                  <span className="event-day">{event.date.split(' ')[1]?.replace(',', '')}</span>
-                  <span className="event-month">{event.date.split(' ')[0]}</span>
+                <div className="event-flyer">
+                  <img src={event.flyer} alt="" />
                 </div>
-                <div className="event-details">
-                  <span className="event-type" style={{ color: eventColors[event.type] }}>{event.type}</span>
-                  <h3>{event.title}</h3>
-                  <p className="event-desc">{event.description}</p>
-                  <div className="event-meta">
-                    <span>🕐 {event.time}</span>
-                    <span>📍 {event.location}</span>
+                <div className="event-info">
+                  <div
+                    className="event-date-block"
+                    style={{ borderColor: eventColors[event.type] }}
+                  >
+                    <span className="event-day">{event.date.split(' ')[1]?.replace(',', '')}</span>
+                    <span className="event-month">{event.date.split(' ')[0]}</span>
+                  </div>
+                  <div className="event-details">
+                    <span className="event-type" style={{ color: eventColors[event.type] }}>{event.type}</span>
+                    <h3>{event.title}</h3>
+                    <p className="event-desc">{event.description}</p>
+                    <div className="event-meta">
+                      <span>🕐 {event.time}</span>
+                      <span>📍 {event.location}</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -392,7 +404,44 @@ export default function Home() {
               </div>
               <div className="contact-item">
                 <span className="contact-label">Social</span>
-                <a href="https://www.instagram.com/cal.slab/" target="_blank" rel="noopener noreferrer">@cal.slab</a>
+                <div className="social-pills">
+                  <a
+                    href="https://www.instagram.com/cal.slab/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-pill instagram-pill"
+                  >
+                    <span className="social-icon instagram-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                        <circle cx="12" cy="12" r="4.2" />
+                        <circle cx="17" cy="7" r="1.1" />
+                      </svg>
+                    </span>
+                    <span className="social-text">
+                      <strong>Instagram</strong>
+                      <span>Follow @cal.slab</span>
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-pill linkedin-pill"
+                  >
+                    <span className="social-icon linkedin-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="18" height="18" rx="3" ry="3" />
+                        <path d="M8.2 17.5V10h-2v7.5h2Zm-1-8.7a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Zm3.5 8.7h2v-4.1c0-.9.6-1.5 1.4-1.5.8 0 1.3.5 1.3 1.5v4.1h2V13c0-2-1.1-3.1-2.8-3.1-1.2 0-1.9.6-2.3 1.2h-.1V10h-1.9v7.5Z" />
+                      </svg>
+                    </span>
+                    <span className="social-text">
+                      <strong>LinkedIn</strong>
+                      <span>Connect with us</span>
+                    </span>
+                  </a>
+                </div>
               </div>
             </motion.div>
 
@@ -462,19 +511,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      <section className="cta-section">
-        <motion.div
-          className="cta-box"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-        >
-          <h2>Join Our Community</h2>
-          <p>Whether you're Sri Lankan, have ties to the island, or simply curious—all are welcome!</p>
-          <a href="#contact" className="btn btn-primary btn-lg">Get in Touch</a>
-        </motion.div>
       </section>
     </div>
   )

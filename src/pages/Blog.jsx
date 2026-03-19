@@ -6,7 +6,7 @@ const blogPosts = [
     id: 1,
     title: 'Sinhala & Tamil New Year Celebration 2024',
     date: 'Apr 14, 2024',
-    excerpt: 'Our annual Avurudu celebration brought together over 100 students for traditional games, kiribath, and cultural performances. The auspicious time was observed with milk rice and sweets, followed by raban playing and pillow fights—a true taste of the island\'s most beloved holiday.',
+    excerpt: "Our annual Avurudu celebration brought together over 100 students for traditional games, kiribath, and cultural performances. The auspicious time was observed with milk rice and sweets, followed by raban playing and pillow fights: a true taste of the island's most beloved holiday.",
     category: 'Events',
     readTime: '4 min',
   },
@@ -22,7 +22,7 @@ const blogPosts = [
     id: 3,
     title: 'Sri Lankan Cuisine Night: A Culinary Journey',
     date: 'Oct 28, 2024',
-    excerpt: 'Kottu, hoppers, and string hoppers—we explored the flavors of the island at our fall food event. From Jaffna crab curry to upcountry vegetable dishes, the night was a reminder of how Sri Lanka\'s geography shapes its table. Recipes and stories inside!',
+    excerpt: "Kottu, hoppers, and string hoppers: we explored the flavors of the island at our fall food event. From Jaffna crab curry to upcountry vegetable dishes, the night was a reminder of how Sri Lanka's geography shapes its table. Recipes and stories inside!",
     category: 'Culture',
     readTime: '5 min',
   },
@@ -38,7 +38,7 @@ const blogPosts = [
     id: 5,
     title: 'Spotlight: Sri Lankan Students in STEM',
     date: 'Nov 15, 2024',
-    excerpt: 'Profiling SLAB members making waves in engineering, computer science, and research at Cal. From tea-estate backgrounds to Colombo schools, these students are proof that Sri Lanka\'s education system and drive produce world-class talent—and they\'re giving back through mentorship and outreach.',
+    excerpt: "Profiling SLAB members making waves in engineering, computer science, and research at Cal. From tea-estate backgrounds to Colombo schools, these students are proof that Sri Lanka's education system and drive produce world-class talent, and they are giving back through mentorship and outreach.",
     category: 'Spotlight',
     readTime: '6 min',
   },
@@ -46,7 +46,7 @@ const blogPosts = [
     id: 6,
     title: 'Why Ceylon Tea Still Rules the World',
     date: 'Dec 3, 2024',
-    excerpt: 'A deep dive into Sri Lanka\'s tea industry: from Nuwara Eliya to Ella, the highlands produce some of the finest black tea on earth. We trace the history from British planters to modern organic estates and share how to brew the perfect cup the Lankan way—strong, with a splash of milk.',
+    excerpt: "A deep dive into Sri Lanka's tea industry: from Nuwara Eliya to Ella, the highlands produce some of the finest black tea on earth. We trace the history from British planters to modern organic estates and share how to brew the perfect cup the Lankan way, strong, with a splash of milk.",
     category: 'Sri Lanka',
     readTime: '7 min',
   },
@@ -62,7 +62,7 @@ const blogPosts = [
     id: 8,
     title: 'Kandyan Dance and Drumming: Keeping Tradition Alive',
     date: 'Feb 1, 2025',
-    excerpt: 'The upcountry performing arts—Ves dance, Pantheru, and the thunder of the geta beraya—are among Sri Lanka\'s most iconic. At our spring workshop, a visiting artist taught basics of Kandyan dance and explained how these forms survived colonialism and continue to inspire new generations.',
+    excerpt: "The upcountry performing arts, including Ves dance, Pantheru, and the thunder of the geta beraya, are among Sri Lanka's most iconic. At our spring workshop, a visiting artist taught basics of Kandyan dance and explained how these forms survived colonialism and continue to inspire new generations.",
     category: 'Culture',
     readTime: '5 min',
   },
@@ -93,7 +93,7 @@ export default function Blog() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <h1>Blog</h1>
-          <p>Stories, updates, and happenings from our community—and the Sri Lanka we love</p>
+          <p>Stories, updates, and happenings from our community and the Sri Lanka we love</p>
         </motion.div>
       </section>
 

@@ -22,7 +22,7 @@ git commit -m "Deploy"
 git push origin main
 ```
 
-The workflow runs on push to `main` (or `master`). After 1–2 minutes, your site will be at:
+The workflow runs on push to `main` (or `master`). After 1-2 minutes, your site will be at:
 
 **https://santhusha-bit.github.io/SriLankansAtBerkeley/**
 

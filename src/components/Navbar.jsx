@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import logoImg from '../../images/logo.jpg'
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '') || ''
 const navLinks = [
   { path: '/', hash: '#about', label: 'About' },
-  { path: '/', hash: '#sri-lanka', label: 'Sri Lanka' },
   { path: '/', hash: '#events', label: 'Events' },
   { path: '/blog', label: 'Blog' },
   { path: '/', hash: '#contact', label: 'Contact' },
+  { path: '/', hash: '#sri-lanka', label: 'Sri Lanka' },
 ]
 
 export default function Navbar() {
@@ -29,8 +30,9 @@ export default function Navbar() {
     >
       <div className="nav-container">
         <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
-          <span className="logo-text">SLAB</span>
-          <span className="logo-sub">Sri Lankan at Berkeley</span>
+          <span className="logo-mark">
+            <img src={logoImg} alt="Sri Lankans at Berkeley logo" />
+          </span>
         </Link>
 
         <button

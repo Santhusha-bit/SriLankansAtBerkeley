@@ -40,20 +40,22 @@
   text-decoration: none;
   color: white;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
-.logo-text {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
-.logo-sub {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.85);
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .nav-links {
@@ -163,15 +165,17 @@
 }
 .btn-outline {
   background: transparent;
-  color: var(--maroon);
-  border-color: var(--maroon);
+  color: white;
+  border-color: rgba(255,255,255,0.85);
 }
 .btn-outline:hover {
-  background: var(--maroon);
+  background: rgba(255,255,255,0.14);
   color: white;
+  border-color: white;
 }
 .btn-lg { padding: 1rem 2rem; font-size: 1rem; }
 .btn-block { width: 100%; text-align: center; }
+.btn-sm { padding: 0.45rem 0.9rem; font-size: 0.85rem; }
 
 /* ========== HERO (HOME) ========== */
 .hero {
@@ -190,23 +194,58 @@
   position: absolute;
   inset: 0;
 }
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05) brightness(0.7);
+  transform: scale(1.02);
+}
 .hero-gradient {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(135deg, rgba(141, 21, 58, 0.08) 0%, transparent 40%),
-    linear-gradient(225deg, rgba(0, 83, 78, 0.06) 0%, transparent 40%),
-    linear-gradient(315deg, rgba(235, 116, 0, 0.05) 0%, transparent 40%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0.05) 100%),
+    linear-gradient(135deg, rgba(141, 21, 58, 0.18) 0%, transparent 45%),
+    linear-gradient(225deg, rgba(0, 83, 78, 0.14) 0%, transparent 45%),
+    linear-gradient(315deg, rgba(235, 116, 0, 0.14) 0%, transparent 45%);
 }
 .hero-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.4;
+  opacity: 0.25;
   background-image: 
     repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 190, 41, 0.03) 2px, rgba(255, 190, 41, 0.03) 4px);
 }
 
-.hero-content { position: relative; z-index: 1; }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 190, 41, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 190, 41, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(235, 116, 0, 0.14) 0%, transparent 60%),
+    radial-gradient(circle at 65% 90%, rgba(0, 83, 78, 0.16) 0%, transparent 55%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+.hero-content > * {
+  position: relative;
+}
 .hero-badge {
   display: inline-block;
   padding: 0.35rem 1rem;
@@ -219,9 +258,9 @@
   letter-spacing: 0.05em;
 }
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1.2;
-  color: var(--text-dark);
+  font-size: clamp(2.3rem, 5.4vw, 3.6rem);
+  line-height: 1.18;
+  color: white;
   margin-bottom: 1rem;
 }
 .hero h1 .highlight {
@@ -232,7 +271,7 @@
 }
 .hero-subtitle {
   font-size: 1.2rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.9);
   max-width: 520px;
   margin: 0 auto 2rem;
 }
@@ -252,7 +291,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.85);
 }
 .scroll-indicator {
   width: 24px;
@@ -276,14 +315,23 @@
 /* ========== PHOTO CAROUSEL ========== */
 .photo-carousel {
   position: relative;
-  width: 100%;
-  height: clamp(280px, 45vw, 500px);
+  width: min(1100px, calc(100% - 3rem));
+  height: clamp(420px, 58vw, 780px);
+  margin: 2rem auto 0;
   overflow: hidden;
-  margin-top: 0;
+  border-radius: 22px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.16);
+  border: 1px solid rgba(141, 21, 58, 0.08);
+  background: rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.photo-carousel:hover {
+  box-shadow: 0 20px 70px rgba(0,0,0,0.22);
+  transform: translateY(-3px);
 }
 .carousel-track {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: 100%;
 }
 .carousel-slide {
   position: absolute;
@@ -298,22 +346,7 @@
 .carousel-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
-}
-.carousel-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-.carousel-caption span {
-  color: white;
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-weight: 600;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  background: transparent;
 }
 .carousel-dots {
   position: absolute;
@@ -328,13 +361,13 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.8);
-  background: transparent;
+  border: 1px solid rgba(255,255,255,0.65);
+  background: rgba(0,0,0,0.25);
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, border-color 0.3s;
 }
 .carousel-dot:hover {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.25);
 }
 .carousel-dot.active {
   background: var(--yellow);
@@ -347,22 +380,26 @@
   width: 48px;
   height: 48px;
   border: none;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.28);
   color: white;
   font-size: 1.75rem;
   cursor: pointer;
   z-index: 2;
-  transition: background 0.3s;
+  transition: background 0.25s, transform 0.25s;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
 }
 .carousel-btn:hover {
-  background: rgba(141, 21, 58, 0.9);
+  background: rgba(141, 21, 58, 0.75);
+  transform: translateY(-50%) scale(1.04);
 }
-.carousel-btn-prev { left: 0.5rem; }
-.carousel-btn-next { right: 0.5rem; }
+.carousel-btn-prev { left: 0.75rem; }
+.carousel-btn-next { right: 0.75rem; }
 
 /* ========== FEATURES (HOME) ========== */
 .features {
@@ -370,9 +407,10 @@
 }
 .section-title {
   text-align: center;
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 3vw, 2.4rem);
   color: var(--maroon);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
 }
 .features-grid {
   display: grid;
@@ -381,9 +419,9 @@
 }
 .feature-card {
   background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 1.75rem 1.75rem 1.9rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
   border: 1px solid rgba(141, 21, 58, 0.08);
   transition: box-shadow 0.3s;
 }
@@ -392,7 +430,7 @@
 }
 .feature-card-image {
   width: calc(100% + 4rem);
-  height: 160px;
+  height: 220px;
   margin: -2rem -2rem 1rem -2rem;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
@@ -401,11 +439,11 @@
 .feature-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .feature-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--maroon);
   margin-bottom: 0.5rem;
 }
@@ -425,6 +463,29 @@
 /* ========== SRI LANKA PHOTOS ========== */
 .srilanka-photos {
   padding: 4rem 0 5rem;
+}
+.youtube-embed {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border: 1px solid rgba(141, 21, 58, 0.08);
+  background: #000;
+}
+.youtube-embed::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%;
+}
+.youtube-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .photo-gallery {
   display: grid;
@@ -602,6 +663,75 @@
   font-weight: 500;
   text-decoration: none;
 }
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 190, 41, 0.12);
+  border: 1px solid rgba(255, 190, 41, 0.4);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.social-pill:hover {
+  background: rgba(255, 190, 41, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+.social-icon.instagram-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fdf497 10%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon.instagram-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.7;
+}
+.social-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+.social-text strong {
+  font-size: 0.88rem;
+}
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.linkedin-pill {
+  background: rgba(40, 103, 178, 0.06);
+  border-color: rgba(40, 103, 178, 0.35);
+}
+.linkedin-pill:hover {
+  background: rgba(40, 103, 178, 0.12);
+}
+.social-icon.linkedin-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #2867B2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icon.linkedin-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
 .contact-form-wrapper {
   background: white;
   padding: 2.5rem;
@@ -708,13 +838,36 @@
   display: flex;
   gap: 2rem;
   background: white;
-  padding: 2rem;
-  border-radius: 16px;
+  padding: 2rem 2.25rem;
+  border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   border: 1px solid rgba(141, 21, 58, 0.06);
   transition: box-shadow 0.3s;
+  align-items: stretch;
 }
 .event-card:hover { box-shadow: 0 8px 30px rgba(141, 21, 58, 0.1); }
+.event-flyer {
+  flex: 0 0 45%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-warm);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+.event-flyer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.event-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+  min-width: 0;
+  padding-right: 0.5rem;
+}
 .event-date-block {
   flex-shrink: 0;
   width: 80px;
@@ -728,7 +881,7 @@
 }
 .event-day { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
 .event-month { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
-.event-details { flex: 1; }
+.event-details { width: 100%; }
 .event-type {
   font-size: 0.75rem;
   font-weight: 600;
@@ -744,19 +897,58 @@
   gap: 1.5rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 @media (max-width: 600px) {
-  .event-card { flex-direction: column; gap: 1rem; }
+  .event-card {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: 18px;
+  }
   .event-date-block { width: 100%; height: auto; padding: 0.75rem; flex-direction: row; gap: 0.5rem; }
+  .event-flyer { flex-basis: auto; width: 100%; }
+  .event-flyer img { height: 260px; }
+  .event-info { flex-basis: auto; width: 100%; }
+}
+
+/* Mobile layout tweaks */
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1.25rem 3rem;
+  }
+  .hero-content {
+    padding: 1.25rem 1.5rem;
+  }
+  .photo-carousel {
+    width: calc(100% - 2rem);
+    height: clamp(320px, 72vw, 520px);
+    margin-top: 1.5rem;
+  }
+  .features {
+    padding: 4rem 0;
+  }
+  .srilanka-photos,
+  .srilanka-section,
+  .events-section,
+  .contact-section {
+    padding: 3rem 0 4rem;
+  }
 }
 
 /* ========== SRI LANKA PAGE ========== */
 .srilanka-content { padding: 3rem 0 5rem; }
 .srilanka-intro { margin-bottom: 3rem; }
 .srilanka-intro .lead { font-size: 1.2rem; }
-.highlights-grid { margin-bottom: 4rem; }
+.highlights-grid {
+  margin-bottom: 4rem;
+  text-align: center;
+}
 .highlights-grid h2,
-.highlights-grid h3 { color: var(--maroon); margin-bottom: 1.5rem; }
+.highlights-grid h3 {
+  color: var(--maroon);
+  margin-bottom: 1.5rem;
+}
 .highlight-card {
   background: white;
   padding: 2rem;
@@ -764,27 +956,89 @@
   margin-bottom: 1rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   border-left: 4px solid var(--green);
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.highlight-card-image {
+  flex: 0 0 220px;
+  height: 160px;
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-warm);
+}
+.highlight-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.highlight-card-body {
+  flex: 1;
+  min-width: 0;
 }
 .highlight-card h3 { color: var(--maroon); margin-bottom: 0.5rem; }
+.highlight-card h4 { color: var(--maroon); margin-bottom: 0.5rem; }
+
+.srilanka-map {
+  margin: 2.5rem 0 3.5rem;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border: 1px solid rgba(141, 21, 58, 0.12);
+}
+.srilanka-map iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
+
+@media (max-width: 700px) {
+  .highlight-card {
+    flex-direction: column;
+  }
+  .highlight-card-image {
+    width: 100%;
+    flex-basis: auto;
+    height: 180px;
+  }
+}
 .culture-section { margin-bottom: 4rem; }
+.culture-section .section-title { margin-bottom: 1.5rem; }
 .culture-section h2 { color: var(--maroon); margin-bottom: 1.5rem; }
 .culture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 .culture-card {
   background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 2.25rem;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0 6px 26px rgba(0,0,0,0.08);
   transition: box-shadow 0.3s;
 }
-.culture-card:hover { box-shadow: 0 8px 30px rgba(141, 21, 58, 0.1); }
-.culture-emoji { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+.culture-card:hover { box-shadow: 0 12px 36px rgba(141, 21, 58, 0.12); }
+.culture-card-image {
+  width: calc(100% + 4.5rem);
+  height: 200px;
+  margin: -2.25rem -2.25rem 1.25rem -2.25rem;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  background: var(--bg-warm);
+}
+.culture-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .culture-card h3 { color: var(--maroon); margin-bottom: 0.5rem; font-size: 1.1rem; }
-.culture-card p { font-size: 0.9rem; color: var(--text-muted); }
+.culture-card h4 { color: var(--maroon); margin-bottom: 0.5rem; font-size: 1.1rem; }
+.culture-card p { font-size: 1rem; color: var(--text-muted); }
 .flag-section h2,
 .flag-section h3 { color: var(--maroon); margin-bottom: 1.5rem; }
 .flag-explained {

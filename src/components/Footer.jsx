@@ -20,7 +20,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3>Sri Lankan at Berkeley</h3>
+            <h3>Sri Lankans at Berkeley</h3>
             <p>Celebrating culture, building community at UC Berkeley since our founding.</p>
           </motion.div>
           
@@ -60,7 +60,7 @@ export default function Footer() {
             <span style={{ background: 'var(--green)' }}></span>
             <span style={{ background: 'var(--yellow)' }}></span>
           </div>
-          <p>© {new Date().getFullYear()} Sri Lankan at Berkeley. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sri Lankans at Berkeley. All rights reserved.</p>
         </div>
       </div>
     </footer>

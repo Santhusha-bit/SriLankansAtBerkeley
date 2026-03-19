@@ -11,7 +11,7 @@ const cultureItems = [
   { emoji: '🍛', title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
   { emoji: '🎭', title: 'Arts', text: 'Kandyan dance, traditional drumming, and intricate crafts including woodcarving and batik.' },
   { emoji: '📿', title: 'Religion', text: 'A multi-religious society with Buddhism, Hinduism, Islam, and Christianity coexisting.' },
-  { emoji: '🏏', title: 'Sports', text: 'Cricket is a national passion—Sri Lanka has produced world champions and legendary players.' },
+  { emoji: '🏏', title: 'Sports', text: 'Cricket is a national passion; Sri Lanka has produced world champions and legendary players.' },
 ]
 
 export default function SriLanka() {
@@ -44,7 +44,7 @@ export default function SriLanka() {
             viewport={{ once: true }}
           >
             <p className="lead">
-              Sri Lanka—formerly Ceylon—is an island nation in South Asia, rich in history, culture, and natural beauty. 
+              Sri Lanka, formerly Ceylon, is an island nation in South Asia, rich in history, culture, and natural beauty. 
               From ancient temples to tea plantations, pristine beaches to misty mountains, it continues to inspire our community at Berkeley.
             </p>
           </motion.div>
@@ -111,11 +111,11 @@ export default function SriLanka() {
                 <div className="flag-stripe" style={{ background: 'var(--green)' }}></div>
               </div>
               <div className="flag-symbolism">
-                <p><strong>Maroon</strong> — Sinhalese people</p>
-                <p><strong>Saffron</strong> — Tamil people</p>
-                <p><strong>Green</strong> — Muslim (Moor) people</p>
-                <p><strong>Yellow border</strong> — Buddhism and unity</p>
-                <p><strong>Lion</strong> — Strength and the Sinhalese people</p>
+                <p><strong>Maroon</strong> - Sinhalese people</p>
+                <p><strong>Saffron</strong> - Tamil people</p>
+                <p><strong>Green</strong> - Muslim (Moor) people</p>
+                <p><strong>Yellow border</strong> - Buddhism and unity</p>
+                <p><strong>Lion</strong> - Strength and the Sinhalese people</p>
               </div>
             </div>
           </motion.div>

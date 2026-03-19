@@ -1,4 +1,4 @@
-# Sri Lankan at Berkeley (SLAB)
+# Sri Lankans at Berkeley (SLAB)
 
 A single-page website for the Sri Lankan community at UC Berkeley, built with React + Vite.
 
