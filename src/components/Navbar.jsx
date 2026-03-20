@@ -78,17 +78,17 @@ export default function Navbar() {
               </motion.li>
             ))}
           </ul>
-
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle dark/light theme"
-            title="Toggle theme"
-          >
-            {theme === 'dark' ? '☀' : '☾'}
-          </button>
         </div>
+
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label="Toggle dark/light theme"
+          title="Toggle theme"
+        >
+          {theme === 'dark' ? '☀' : '☾'}
+        </button>
       </div>
 
       <AnimatePresence>

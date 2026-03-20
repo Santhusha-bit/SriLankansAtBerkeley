@@ -117,6 +117,7 @@
   justify-content: center;
   font-weight: 700;
   transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  margin-left: 1.25rem;
 }
 .theme-toggle:hover {
   background: rgba(255,255,255,0.12);
@@ -971,8 +972,8 @@
   box-shadow: 0 12px 40px rgba(141, 21, 58, 0.12);
 }
 .exec-avatar {
-  width: 92px;
-  height: 92px;
+  width: 112px;
+  height: 112px;
   border-radius: 999px;
   margin: 0 auto 1rem;
   display: flex;
@@ -1403,12 +1404,16 @@
 .footer-logos {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 1.75rem 2.25rem;
 }
 @media (min-width: 769px) {
-  .footer-logos { justify-content: flex-end; }
+  .footer-logos {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 }
 .footer-logo-item {
   display: flex;
@@ -1429,16 +1434,16 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 .footer-logo-berkeley {
-  height: 65px;
+  height: 75px;
   width: auto;
-  max-width: min(240px, 100%);
+  max-width: min(280px, 100%);
   filter: none;
   opacity: 1;
   background: transparent;
   mix-blend-mode: normal;
 }
 .footer-logo-flag {
-  width: 100px;
+  width: 120px;
   height: auto; /* preserve natural flag aspect ratio */
   max-width: none;
   object-fit: contain;

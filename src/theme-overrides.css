@@ -79,7 +79,7 @@ html[data-theme='dark'] {
 }
 
 [data-theme='dark'] .contact-form-wrapper {
-  background: linear-gradient(160deg, rgba(255, 190, 41, 0.1) 0%, rgba(141, 21, 58, 0.18) 42%, rgba(0, 83, 78, 0.2) 100%);
+  background: linear-gradient(160deg, rgba(255, 190, 41, 0.1) 0%, rgba(141, 21, 58, 0.18) 42%, rgba(0, 83, 78, 0.2) 100%) !important;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -121,7 +121,7 @@ html[data-theme='dark'] {
 [data-theme='dark'] .about-card:nth-child(4n + 1),
 [data-theme='dark'] .gallery-item:nth-child(4n + 1),
 [data-theme='dark'] .highlight-card:nth-child(4n + 1) {
-  background: linear-gradient(145deg, rgba(141, 21, 58, 0.42) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+  background: linear-gradient(145deg, rgba(141, 21, 58, 0.42) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 2),
 [data-theme='dark'] .culture-card:nth-child(4n + 2),
@@ -130,7 +130,7 @@ html[data-theme='dark'] {
 [data-theme='dark'] .about-card:nth-child(4n + 2),
 [data-theme='dark'] .gallery-item:nth-child(4n + 2),
 [data-theme='dark'] .highlight-card:nth-child(4n + 2) {
-  background: linear-gradient(145deg, rgba(235, 116, 0, 0.35) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+  background: linear-gradient(145deg, rgba(235, 116, 0, 0.35) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 3),
 [data-theme='dark'] .culture-card:nth-child(4n + 3),
@@ -139,7 +139,7 @@ html[data-theme='dark'] {
 [data-theme='dark'] .about-card:nth-child(4n + 3),
 [data-theme='dark'] .gallery-item:nth-child(4n + 3),
 [data-theme='dark'] .highlight-card:nth-child(4n + 3) {
-  background: linear-gradient(145deg, rgba(0, 83, 78, 0.4) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+  background: linear-gradient(145deg, rgba(0, 83, 78, 0.4) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 4),
 [data-theme='dark'] .culture-card:nth-child(4n + 4),
@@ -148,28 +148,28 @@ html[data-theme='dark'] {
 [data-theme='dark'] .about-card:nth-child(4n + 4),
 [data-theme='dark'] .gallery-item:nth-child(4n + 4),
 [data-theme='dark'] .highlight-card:nth-child(4n + 4) {
-  background: linear-gradient(145deg, rgba(255, 190, 41, 0.22) 0%, rgba(184, 134, 11, 0.18) 35%, #18181f 100%);
+  background: linear-gradient(145deg, rgba(255, 190, 41, 0.22) 0%, rgba(184, 134, 11, 0.18) 35%, #18181f 100%) !important;
 }
 
 [data-theme='dark'] .feature-card:nth-child(4n + 1),
 [data-theme='dark'] .blog-card:nth-child(4n + 1),
 [data-theme='dark'] .event-card:nth-child(4n + 1) {
-  border-color: rgba(169, 26, 71, 0.45);
+  border-color: rgba(169, 26, 71, 0.45) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 2),
 [data-theme='dark'] .blog-card:nth-child(4n + 2),
 [data-theme='dark'] .event-card:nth-child(4n + 2) {
-  border-color: rgba(235, 116, 0, 0.4);
+  border-color: rgba(235, 116, 0, 0.4) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 3),
 [data-theme='dark'] .blog-card:nth-child(4n + 3),
 [data-theme='dark'] .event-card:nth-child(4n + 3) {
-  border-color: rgba(0, 112, 102, 0.45);
+  border-color: rgba(0, 112, 102, 0.45) !important;
 }
 [data-theme='dark'] .feature-card:nth-child(4n + 4),
 [data-theme='dark'] .blog-card:nth-child(4n + 4),
 [data-theme='dark'] .event-card:nth-child(4n + 4) {
-  border-color: rgba(255, 190, 41, 0.35);
+  border-color: rgba(255, 190, 41, 0.35) !important;
 }
 
 [data-theme='dark'] .feature-card:hover,
@@ -208,6 +208,29 @@ html[data-theme='dark'] {
   color: var(--text-dark);
 }
 
+[data-theme='dark'] .event-desc,
+[data-theme='dark'] .event-meta {
+  color: var(--text-muted) !important;
+}
+
 [data-theme='dark'] .form-success {
   background: rgba(0, 83, 78, 0.2);
+}
+
+/* Executive Team */
+[data-theme='dark'] .exec-card {
+  background: linear-gradient(145deg, rgba(141, 21, 58, 0.35) 0%, rgba(24, 24, 32, 0.98) 55%, #15151c 100%) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45) !important;
+}
+[data-theme='dark'] .exec-card h4 {
+  color: var(--maroon-light) !important;
+}
+[data-theme='dark'] .exec-card p {
+  color: var(--text-muted) !important;
+}
+[data-theme='dark'] .exec-avatar {
+  background: linear-gradient(135deg, rgba(141, 21, 58, 0.25) 0%, rgba(235, 116, 0, 0.18) 50%, rgba(0, 83, 78, 0.18) 100%) !important;
+  border-color: rgba(141, 21, 58, 0.35) !important;
+  color: var(--maroon-light) !important;
 }
