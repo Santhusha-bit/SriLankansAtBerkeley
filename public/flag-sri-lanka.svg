@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Flag of Sri Lanka">
+  <title>Flag of Sri Lanka</title>
+  <!-- Simplified national flag: green and saffron vertical stripes, maroon field, gold border -->
+  <rect width="1200" height="600" fill="#FFBE29"/>
+  <rect x="24" y="24" width="1152" height="552" fill="none" stroke="#FFBE29" stroke-width="12"/>
+  <rect x="48" y="48" width="180" height="504" fill="#00534E"/>
+  <rect x="228" y="48" width="180" height="504" fill="#EB7400"/>
+  <rect x="408" y="48" width="744" height="504" fill="#8D153A"/>
+  <!-- Stylized lion emblem area (simplified circle for small sizes) -->
+  <circle cx="780" cy="300" r="120" fill="#FFBE29" opacity="0.35"/>
+</svg>

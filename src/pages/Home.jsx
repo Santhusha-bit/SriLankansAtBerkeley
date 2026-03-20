@@ -7,15 +7,21 @@ import cultureCuisine from '../../images/cuisine.jpg'
 import cultureArts from '../../images/arts.jpg'
 import cultureReligion from '../../images/religions.jpg'
 import cultureSports from '../../images/sports.jpg'
+import cultureFestivals from '../../images/projects/awurudu/DSC_0097.jpg'
+import cultureHeritage from '../../images/ancient.jpg'
 import flyerCareerPanel from '../../images/projects/awurudu/DSC_0080.jpg'
 import flyerAwurudu from '../../images/projects/awurudu/DSC_0251.jpg'
 import offerEvents from '../../images/projects/awurudu/DSC_0177.jpg'
 import offerCommunity from '../../images/projects/awurudu/DSC_0123.jpg'
 import offerHeritage from '../../images/projects/awurudu/DSC_0045.jpg'
-import highlightOcean from '../../images/pearl.jpg'
-import highlightHistory from '../../images/ancient.jpg'
-import highlightNature from '../../images/bio.jpg'
-import highlightTea from '../../images/tea.avif'
+import offerBlogCard from '../../images/projects/awurudu/DSC_0178.jpg'
+import teamPresident from '../../images/team/president.jpg'
+import teamCoPresident from '../../images/team/co-president.jpg'
+import teamSecretary from '../../images/team/secretary.png'
+import teamTreasurer from '../../images/team/treasurer.jpg'
+import teamMarketing from '../../images/team/marketing.jpg'
+import teamTech from '../../images/team/tech.jpg'
+import { blogPosts } from '../data/blogPosts'
 
 // Ensures ESLint counts `motion` as used (JSX tags alone may not).
 const _MOTION = motion
@@ -45,18 +51,22 @@ const events = [
 
 const eventColors = { Panel: 'var(--green)', Festival: 'var(--saffron)' }
 
-const highlights = [
-  { image: highlightOcean, title: 'Pearl of the Indian Ocean', desc: 'Sri Lanka has been known by this name for centuries, famed for its precious gems, spices, and natural beauty.' },
-  { image: highlightHistory, title: 'Ancient Civilization', desc: 'Over 2,500 years of recorded history, from the kingdoms of Anuradhapura and Polonnaruwa to the Kandyan Kingdom.' },
-  { image: highlightNature, title: 'Biodiversity Hotspot', desc: 'One of the world\'s biodiversity hotspots with unique wildlife including elephants, leopards, and endemic species.' },
-  { image: highlightTea, title: 'Tea Country', desc: 'The birthplace of Ceylon tea, with lush highland estates producing some of the finest tea in the world.' },
-]
-
 const cultureItems = [
   { image: cultureCuisine, title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
   { image: cultureArts, title: 'Arts', text: 'Kandyan dance, traditional drumming, and intricate crafts including woodcarving and batik.' },
   { image: cultureReligion, title: 'Religion', text: 'A multi-religious society with Buddhism, Hinduism, Islam, and Christianity coexisting.' },
   { image: cultureSports, title: 'Sports', text: 'Cricket is a national passion; Sri Lanka has produced world champions and legendary players.' },
+  { image: cultureFestivals, title: 'Festivals', text: 'Sinhala & Tamil New Year, Vesak, Thai Pongal, and Deepavali bring communities together with rituals, food, and light.' },
+  { image: cultureHeritage, title: 'Heritage Sites', text: 'Ancient capitals, sacred stupas, and UNESCO World Heritage landmarks tell thousands of years of island history.' },
+]
+
+const executiveTeam = [
+  { name: 'Stephan Siyambalapitiya', role: 'Co-President', initials: 'SS', photo: teamPresident },
+  { name: 'Dinithi Jayakody', role: 'Co-President', initials: 'EM', photo: teamCoPresident },
+  { name: 'Amisha Gupta', role: 'Secretary', initials: 'EX', photo: teamSecretary },
+  { name: 'Dylan Jayalath', role: 'Treasurer', initials: 'ET', photo: teamTreasurer },
+  { name: 'Kiara Abhayaratne', role: 'Director of Marketing', initials: 'EC', photo: teamMarketing },
+  { name: 'Santhusha Mudannayaka', role: 'Director of Technology', initials: 'CL', photo: teamTech },
 ]
 
 export default function Home() {
@@ -94,7 +104,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
           >
-            ආයුබෝවන්! Vanakkam! Welcome!
+            ආයුබෝවන්! வணக்கம்! Welcome!
           </motion.span>
           <h1>
             Sri Lankans at <span className="highlight">Berkeley</span>
@@ -214,6 +224,69 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="blog-preview-section" id="blog">
+        <div className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Blogs
+          </motion.h2>
+          <motion.p
+            className="section-subtitle blog-preview-intro"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            Stories, updates, and happenings from our community
+          </motion.p>
+
+          <div className="blog-grid blog-preview-grid">
+            {blogPosts.slice(0, 3).map((post, i) => (
+              <motion.article
+                key={post.id}
+                className="blog-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 * i }}
+                whileHover={{ y: -4 }}
+              >
+                <div className="blog-card-image">
+                  <img src={post.image} alt={post.title} />
+                </div>
+                <div className="blog-card-content">
+                  <div className="blog-card-header">
+                    <span className="blog-category">{post.category}</span>
+                    <span className="blog-meta">
+                      {post.date} · {post.readTime}
+                    </span>
+                  </div>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                  <Link to="/blog" className="blog-link">
+                    Read more →
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <motion.div
+            className="blog-view-all-wrap"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/blog" className="btn btn-primary">
+              View all
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="srilanka-section" id="sri-lanka">
         <div className="container">
           <motion.h2
@@ -253,41 +326,6 @@ export default function Home() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Did You Know?
-          </motion.h2>
-
-          <motion.div
-            className="highlights-grid"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            {highlights.map((item, i) => (
-              <motion.div
-                key={item.title}
-                className="highlight-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-              >
-                <div className="highlight-card-image">
-                  <img src={item.image} alt="" />
-                </div>
-                <div className="highlight-card-body">
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
 
           <motion.section
             className="culture-section"
@@ -375,6 +413,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="exec-team-section" id="executive-team">
+        <div className="container">
+          <motion.h2
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Executive Team
+          </motion.h2>
+          <p className="section-subtitle">Meet the board supporting SLAB</p>
+
+          <div className="exec-grid">
+            {executiveTeam.map((person, i) => (
+              <motion.div
+                key={person.name}
+                className="exec-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 * i }}
+                whileHover={{ y: -6 }}
+              >
+                <div className="exec-avatar">
+                  <img src={person.photo} alt={`${person.name} photo`} />
+                </div>
+                <h4>{person.name}</h4>
+                <p>{person.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact">
         <div className="container">
           <motion.h2
@@ -396,7 +468,7 @@ export default function Home() {
               <h3>Get in Touch</h3>
               <div className="contact-item">
                 <span className="contact-label">Email</span>
-                <a href="mailto:slab@berkeley.edu">slab@berkeley.edu</a>
+                <a href="mailto:stephan_simba@berkeley.edu">stephan_simba@berkeley.edu</a>
               </div>
               <div className="contact-item">
                 <span className="contact-label">Location</span>
@@ -453,8 +525,6 @@ export default function Home() {
               transition={{ delay: 0.2 }}
             >
               <h3>Send a Message</h3>
-              <p className="form-note">Note: This is a demo form. In production, connect to your backend or email service.</p>
-
               {submitted ? (
                 <motion.div
                   className="form-success"

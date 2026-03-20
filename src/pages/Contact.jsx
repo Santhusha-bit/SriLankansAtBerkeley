@@ -46,7 +46,7 @@ export default function Contact() {
             <h2>Get in Touch</h2>
             <div className="contact-item">
               <span className="contact-label">Email</span>
-              <a href="mailto:slab@berkeley.edu">slab@berkeley.edu</a>
+              <a href="mailto:stephan_simba@berkeley.edu">stephan_simba@berkeley.edu</a>
             </div>
             <div className="contact-item">
               <span className="contact-label">Location</span>
@@ -68,8 +68,6 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2>Send a Message</h2>
-            <p className="form-note">Note: This is a demo form. In production, connect to your backend or email service.</p>
-            
             {submitted ? (
               <motion.div 
                 className="form-success"

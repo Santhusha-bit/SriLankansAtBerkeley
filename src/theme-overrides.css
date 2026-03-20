@@ -1,0 +1,213 @@
+/* Dark theme: layered on top of App.css / index.css variables */
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-cream: #0f0f14;
+  --bg-warm: #12121a;
+  --text-dark: #f2f2f5;
+  --text-muted: #c4c6cc;
+}
+
+[data-theme='dark'] .sri-pattern {
+  background-color: var(--bg-cream);
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(235, 116, 0, 0.09) 0%, transparent 52%),
+    radial-gradient(circle at 75% 75%, rgba(0, 83, 78, 0.1) 0%, transparent 52%),
+    linear-gradient(135deg, transparent 48%, rgba(255, 190, 41, 0.05) 49%, rgba(255, 190, 41, 0.05) 51%, transparent 52%);
+  background-size: 100% 100%, 100% 100%, 60px 60px;
+}
+
+[data-theme='dark'] .navbar {
+  background: #2a2418;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  [data-theme='dark'] .nav-links {
+    background: var(--bg-warm);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+  [data-theme='dark'] .nav-links a {
+    color: var(--text-dark);
+  }
+  [data-theme='dark'] .nav-links a:hover,
+  [data-theme='dark'] .nav-links a.active {
+    color: var(--saffron-light);
+  }
+  [data-theme='dark'] .nav-links a.active::after {
+    background: var(--saffron);
+  }
+}
+
+[data-theme='dark'] .theme-toggle {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.2);
+}
+[data-theme='dark'] .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme='dark'] .hero-bg.about-hero-bg,
+[data-theme='dark'] .hero-bg.contact-hero-bg,
+[data-theme='dark'] .hero-bg.blog-hero-bg,
+[data-theme='dark'] .hero-bg.events-hero-bg,
+[data-theme='dark'] .hero-bg.srilanka-hero-bg {
+  background:
+    linear-gradient(180deg, rgba(141, 21, 58, 0.35) 0%, transparent 55%),
+    linear-gradient(90deg, rgba(235, 116, 0, 0.12) 0%, rgba(0, 83, 78, 0.15) 100%),
+    var(--bg-cream);
+}
+
+[data-theme='dark'] .page-hero h1 {
+  color: var(--maroon-light);
+}
+
+[data-theme='dark'] .photo-carousel {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='dark'] .about-intro .lead,
+[data-theme='dark'] .flag-symbolism p {
+  color: var(--text-dark);
+}
+
+[data-theme='dark'] .about-join {
+  background: rgba(235, 116, 0, 0.14);
+}
+
+[data-theme='dark'] .contact-form-wrapper {
+  background: linear-gradient(160deg, rgba(255, 190, 41, 0.1) 0%, rgba(141, 21, 58, 0.18) 42%, rgba(0, 83, 78, 0.2) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .form-group input,
+[data-theme='dark'] .form-group textarea {
+  background: rgba(18, 18, 26, 0.85);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-dark);
+}
+[data-theme='dark'] .form-group input:focus,
+[data-theme='dark'] .form-group textarea:focus {
+  border-color: var(--saffron);
+}
+
+[data-theme='dark'] .contact-item a {
+  color: var(--saffron-light);
+}
+
+[data-theme='dark'] .social-pill {
+  background: rgba(255, 190, 41, 0.1);
+  border-color: rgba(255, 190, 41, 0.35);
+  color: var(--text-dark);
+}
+
+[data-theme='dark'] .youtube-embed {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .srilanka-map {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Card surfaces: dark flag-tinted gradients */
+[data-theme='dark'] .feature-card:nth-child(4n + 1),
+[data-theme='dark'] .culture-card:nth-child(4n + 1),
+[data-theme='dark'] .blog-card:nth-child(4n + 1),
+[data-theme='dark'] .event-card:nth-child(4n + 1),
+[data-theme='dark'] .about-card:nth-child(4n + 1),
+[data-theme='dark'] .gallery-item:nth-child(4n + 1),
+[data-theme='dark'] .highlight-card:nth-child(4n + 1) {
+  background: linear-gradient(145deg, rgba(141, 21, 58, 0.42) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 2),
+[data-theme='dark'] .culture-card:nth-child(4n + 2),
+[data-theme='dark'] .blog-card:nth-child(4n + 2),
+[data-theme='dark'] .event-card:nth-child(4n + 2),
+[data-theme='dark'] .about-card:nth-child(4n + 2),
+[data-theme='dark'] .gallery-item:nth-child(4n + 2),
+[data-theme='dark'] .highlight-card:nth-child(4n + 2) {
+  background: linear-gradient(145deg, rgba(235, 116, 0, 0.35) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 3),
+[data-theme='dark'] .culture-card:nth-child(4n + 3),
+[data-theme='dark'] .blog-card:nth-child(4n + 3),
+[data-theme='dark'] .event-card:nth-child(4n + 3),
+[data-theme='dark'] .about-card:nth-child(4n + 3),
+[data-theme='dark'] .gallery-item:nth-child(4n + 3),
+[data-theme='dark'] .highlight-card:nth-child(4n + 3) {
+  background: linear-gradient(145deg, rgba(0, 83, 78, 0.4) 0%, rgba(24, 24, 32, 0.98) 45%, #15151c 100%);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 4),
+[data-theme='dark'] .culture-card:nth-child(4n + 4),
+[data-theme='dark'] .blog-card:nth-child(4n + 4),
+[data-theme='dark'] .event-card:nth-child(4n + 4),
+[data-theme='dark'] .about-card:nth-child(4n + 4),
+[data-theme='dark'] .gallery-item:nth-child(4n + 4),
+[data-theme='dark'] .highlight-card:nth-child(4n + 4) {
+  background: linear-gradient(145deg, rgba(255, 190, 41, 0.22) 0%, rgba(184, 134, 11, 0.18) 35%, #18181f 100%);
+}
+
+[data-theme='dark'] .feature-card:nth-child(4n + 1),
+[data-theme='dark'] .blog-card:nth-child(4n + 1),
+[data-theme='dark'] .event-card:nth-child(4n + 1) {
+  border-color: rgba(169, 26, 71, 0.45);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 2),
+[data-theme='dark'] .blog-card:nth-child(4n + 2),
+[data-theme='dark'] .event-card:nth-child(4n + 2) {
+  border-color: rgba(235, 116, 0, 0.4);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 3),
+[data-theme='dark'] .blog-card:nth-child(4n + 3),
+[data-theme='dark'] .event-card:nth-child(4n + 3) {
+  border-color: rgba(0, 112, 102, 0.45);
+}
+[data-theme='dark'] .feature-card:nth-child(4n + 4),
+[data-theme='dark'] .blog-card:nth-child(4n + 4),
+[data-theme='dark'] .event-card:nth-child(4n + 4) {
+  border-color: rgba(255, 190, 41, 0.35);
+}
+
+[data-theme='dark'] .feature-card:hover,
+[data-theme='dark'] .blog-card:hover,
+[data-theme='dark'] .event-card:hover,
+[data-theme='dark'] .culture-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='dark'] .feature-card-image,
+[data-theme='dark'] .blog-card-image,
+[data-theme='dark'] .culture-card-image,
+[data-theme='dark'] .highlight-card-image,
+[data-theme='dark'] .event-flyer {
+  background: #0e0e12;
+}
+
+[data-theme='dark'] .feature-card h3,
+[data-theme='dark'] .culture-card h3,
+[data-theme='dark'] .culture-card h4,
+[data-theme='dark'] .blog-card h3,
+[data-theme='dark'] .event-details h3,
+[data-theme='dark'] .about-card h3 {
+  color: var(--maroon-light);
+}
+
+[data-theme='dark'] .feature-card a {
+  color: var(--saffron-light);
+}
+
+[data-theme='dark'] .blog-link {
+  color: var(--saffron-light);
+}
+
+[data-theme='dark'] .event-day {
+  color: var(--text-dark);
+}
+
+[data-theme='dark'] .form-success {
+  background: rgba(0, 83, 78, 0.2);
+}

@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useHref } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import logoImg from '../../images/logo.jpg'
+import { useTheme } from '../context/ThemeContext.jsx'
 
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '') || ''
 const navLinks = [
   { path: '/', hash: '#about', label: 'About' },
   { path: '/', hash: '#events', label: 'Events' },
-  { path: '/blog', label: 'Blog' },
+  { path: '/', hash: '#blog', label: 'Blog', fullBlogPage: true },
   { path: '/', hash: '#contact', label: 'Contact' },
   { path: '/', hash: '#sri-lanka', label: 'Sri Lanka' },
 ]
@@ -15,10 +15,24 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+  const homeHref = useHref('/')
+  const { theme, toggleTheme } = useTheme()
 
   const isActive = (link) => {
-    if (link.path === '/blog') return location.pathname === '/blog'
+    if (link.fullBlogPage) {
+      return (
+        location.pathname === '/blog' ||
+        (location.pathname === '/' && location.hash === '#blog')
+      )
+    }
     return location.pathname === '/' && (location.hash === link.hash || (!location.hash && link.hash === '#about'))
+  }
+
+  const handleSectionNav = (hash) => (e) => {
+    e.preventDefault()
+    setIsOpen(false)
+    navigate({ pathname: '/', hash })
   }
 
   return (
@@ -35,44 +49,46 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <button
-          className={`nav-toggle ${isOpen ? 'open' : ''}`}
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="nav-right">
+          <button
+            className={`nav-toggle ${isOpen ? 'open' : ''}`}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-          {navLinks.map((link, i) => (
-            <motion.li
-              key={link.label}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i }}
-            >
-              {link.path === '/blog' ? (
-                <Link
-                  to="/blog"
-                  className={location.pathname === '/blog' ? 'active' : ''}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
+          <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+            {navLinks.map((link, i) => (
+              <motion.li
+                key={link.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i }}
+              >
                 <a
-                  href={link.hash ? `${basePath}${link.hash}` : basePath || '/'}
+                  href={link.hash ? `${homeHref}${link.hash}` : homeHref}
                   className={isActive(link) ? 'active' : ''}
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleSectionNav(link.hash)}
                 >
                   {link.label}
                 </a>
-              )}
-            </motion.li>
-          ))}
-        </ul>
+              </motion.li>
+            ))}
+          </ul>
+
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle dark/light theme"
+            title="Toggle theme"
+          >
+            {theme === 'dark' ? '☀' : '☾'}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

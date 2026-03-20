@@ -1,7 +1,7 @@
 import { useMemo, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const imageModules = import.meta.glob('../../images/projects/**/*.{jpg,jpeg,png,webp,avif}', {
+const projectImageModules = import.meta.glob('../../images/projects/**/*.{jpg,jpeg,png,webp,avif}', {
   eager: true,
   import: 'default',
 })
@@ -14,7 +14,7 @@ function makeCaptionFromPath(path) {
 
 export default function PhotoCarousel() {
   const slides = useMemo(() => {
-    const entries = Object.entries(imageModules)
+    const entries = Object.entries(projectImageModules)
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([path, src], idx) => {
         const caption = makeCaptionFromPath(path)

@@ -1,12 +1,5 @@
 import { motion } from 'framer-motion'
 
-const highlights = [
-  { title: 'Pearl of the Indian Ocean', desc: 'Sri Lanka has been known by this name for centuries, famed for its precious gems, spices, and natural beauty.' },
-  { title: 'Ancient Civilization', desc: 'Over 2,500 years of recorded history, from the kingdoms of Anuradhapura and Polonnaruwa to the Kandyan Kingdom.' },
-  { title: 'Biodiversity Hotspot', desc: 'One of the world\'s biodiversity hotspots with unique wildlife including elephants, leopards, and endemic species.' },
-  { title: 'Tea Country', desc: 'The birthplace of Ceylon tea, with lush highland estates producing some of the finest tea in the world.' },
-]
-
 const cultureItems = [
   { emoji: '🍛', title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
   { emoji: '🎭', title: 'Arts', text: 'Kandyan dance, traditional drumming, and intricate crafts including woodcarving and batik.' },
@@ -47,28 +40,6 @@ export default function SriLanka() {
               Sri Lanka, formerly Ceylon, is an island nation in South Asia, rich in history, culture, and natural beauty. 
               From ancient temples to tea plantations, pristine beaches to misty mountains, it continues to inspire our community at Berkeley.
             </p>
-          </motion.div>
-
-          <motion.div 
-            className="highlights-grid"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2>Did You Know?</h2>
-            {highlights.map((item, i) => (
-              <motion.div 
-                key={item.title}
-                className="highlight-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-              >
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </motion.div>
-            ))}
           </motion.div>
 
           <motion.section 

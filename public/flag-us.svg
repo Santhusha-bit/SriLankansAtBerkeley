@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 100" role="img" aria-label="Flag of the United States">
+  <title>United States flag</title>
+  <!-- 13 stripes -->
+  <rect y="0" width="190" height="7.69" fill="#B22234"/>
+  <rect y="7.69" width="190" height="7.69" fill="#fff"/>
+  <rect y="15.38" width="190" height="7.69" fill="#B22234"/>
+  <rect y="23.07" width="190" height="7.69" fill="#fff"/>
+  <rect y="30.76" width="190" height="7.69" fill="#B22234"/>
+  <rect y="38.45" width="190" height="7.69" fill="#fff"/>
+  <rect y="46.14" width="190" height="7.69" fill="#B22234"/>
+  <rect y="53.83" width="190" height="7.69" fill="#fff"/>
+  <rect y="61.52" width="190" height="7.69" fill="#B22234"/>
+  <rect y="69.21" width="190" height="7.69" fill="#fff"/>
+  <rect y="76.9" width="190" height="7.69" fill="#B22234"/>
+  <rect y="84.59" width="190" height="7.69" fill="#fff"/>
+  <rect y="92.28" width="190" height="7.69" fill="#B22234"/>
+  <!-- Canton -->
+  <rect width="76" height="53.83" fill="#3C3B6E"/>
+  <g fill="#fff">
+    <circle cx="8" cy="8" r="2"/><circle cx="19" cy="8" r="2"/><circle cx="30" cy="8" r="2"/><circle cx="41" cy="8" r="2"/><circle cx="52" cy="8" r="2"/><circle cx="63" cy="8" r="2"/>
+    <circle cx="13.5" cy="14" r="2"/><circle cx="24.5" cy="14" r="2"/><circle cx="35.5" cy="14" r="2"/><circle cx="46.5" cy="14" r="2"/><circle cx="57.5" cy="14" r="2"/>
+    <circle cx="8" cy="20" r="2"/><circle cx="19" cy="20" r="2"/><circle cx="30" cy="20" r="2"/><circle cx="41" cy="20" r="2"/><circle cx="52" cy="20" r="2"/><circle cx="63" cy="20" r="2"/>
+    <circle cx="13.5" cy="26" r="2"/><circle cx="24.5" cy="26" r="2"/><circle cx="35.5" cy="26" r="2"/><circle cx="46.5" cy="26" r="2"/><circle cx="57.5" cy="26" r="2"/>
+    <circle cx="8" cy="32" r="2"/><circle cx="19" cy="32" r="2"/><circle cx="30" cy="32" r="2"/><circle cx="41" cy="32" r="2"/><circle cx="52" cy="32" r="2"/><circle cx="63" cy="32" r="2"/>
+    <circle cx="13.5" cy="38" r="2"/><circle cx="24.5" cy="38" r="2"/><circle cx="35.5" cy="38" r="2"/><circle cx="46.5" cy="38" r="2"/><circle cx="57.5" cy="38" r="2"/>
+    <circle cx="8" cy="44" r="2"/><circle cx="19" cy="44" r="2"/><circle cx="30" cy="44" r="2"/><circle cx="41" cy="44" r="2"/><circle cx="52" cy="44" r="2"/><circle cx="63" cy="44" r="2"/>
+  </g>
+</svg>
