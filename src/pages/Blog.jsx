@@ -42,7 +42,9 @@ export default function Blog() {
                 <div className="blog-card-content">
                   <div className="blog-card-header">
                     <span className="blog-category">{post.category}</span>
-                    <span className="blog-meta">{post.date} · {post.readTime}</span>
+                    <span className="blog-meta">
+                      {post.date} · {post.readTime} · by {post.author}
+                    </span>
                   </div>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>

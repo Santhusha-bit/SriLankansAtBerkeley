@@ -14,7 +14,6 @@ import flyerAwurudu from '../../images/projects/awurudu/DSC_0251.jpg'
 import offerEvents from '../../images/projects/awurudu/DSC_0177.jpg'
 import offerCommunity from '../../images/projects/awurudu/DSC_0123.jpg'
 import offerHeritage from '../../images/projects/awurudu/DSC_0045.jpg'
-import offerBlogCard from '../../images/projects/awurudu/DSC_0178.jpg'
 import teamPresident from '../../images/team/president.jpg'
 import teamCoPresident from '../../images/team/co-president.jpg'
 import teamSecretary from '../../images/team/secretary.png'
@@ -261,7 +260,7 @@ export default function Home() {
                   <div className="blog-card-header">
                     <span className="blog-category">{post.category}</span>
                     <span className="blog-meta">
-                      {post.date} · {post.readTime}
+                      {post.date} · {post.readTime} · by {post.author}
                     </span>
                   </div>
                   <h3>{post.title}</h3>

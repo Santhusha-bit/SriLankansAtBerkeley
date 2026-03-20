@@ -17,6 +17,7 @@ export const blogPosts = [
       "Our annual Avurudu celebration brought together over 100 students for traditional games, kiribath, and cultural performances. The auspicious time was observed with milk rice and sweets, followed by raban playing and pillow fights: a true taste of the island's most beloved holiday.",
     category: 'Events',
     readTime: '4 min',
+    author: 'SLAB Editorial Team',
     image: cover1,
   },
   {
@@ -27,6 +28,7 @@ export const blogPosts = [
       "Meet the passionate students leading SLAB this academic year. From diverse majors and backgrounds, united by Sri Lankan heritage. This year's board brings experience from Colombo, Kandy, Jaffna, and the diaspora, ensuring every corner of the island is represented at Berkeley.",
     category: 'Announcements',
     readTime: '3 min',
+    author: 'SLAB Communications',
     image: cover2,
   },
   {
@@ -37,6 +39,7 @@ export const blogPosts = [
       "Kottu, hoppers, and string hoppers: we explored the flavors of the island at our fall food event. From Jaffna crab curry to upcountry vegetable dishes, the night was a reminder of how Sri Lanka's geography shapes its table. Recipes and stories inside!",
     category: 'Culture',
     readTime: '5 min',
+    author: 'SLAB Food & Culture',
     image: cover3,
   },
   {
@@ -47,6 +50,7 @@ export const blogPosts = [
       "Commemorating the birth, enlightenment, and passing of the Buddha with meditation, lanterns, and community reflection. Vesak is one of the most sacred days in Sri Lanka; we brought that spirit to Sproul with dansal-style sharing and a talk on Buddhism's role in Lankan culture.",
     category: 'Events',
     readTime: '3 min',
+    author: 'SLAB Community Team',
     image: cover4,
   },
   {
@@ -57,6 +61,7 @@ export const blogPosts = [
       "Profiling SLAB members making waves in engineering, computer science, and research at Cal. From tea-estate backgrounds to Colombo schools, these students are proof that Sri Lanka's education system and drive produce world-class talent, and they are giving back through mentorship and outreach.",
     category: 'Spotlight',
     readTime: '6 min',
+    author: 'SLAB Spotlight',
     image: cover5,
   },
   {
@@ -67,6 +72,7 @@ export const blogPosts = [
       "A deep dive into Sri Lanka's tea industry: from Nuwara Eliya to Ella, the highlands produce some of the finest black tea on earth. We trace the history from British planters to modern organic estates and share how to brew the perfect cup the Lankan way, strong, with a splash of milk.",
     category: 'Sri Lanka',
     readTime: '7 min',
+    author: 'SLAB Sri Lanka Desk',
     image: cover6,
   },
   {
@@ -77,6 +83,7 @@ export const blogPosts = [
       "Sri Lanka's cultural triangle holds UNESCO World Heritage sites that rival any in Asia. The sacred Bo tree in Anuradhapura, the rock fortress of Sigiriya, and the stupas of Polonnaruwa tell a 2,500-year story. We recap a member's trip and what every Lankan should know about these treasures.",
     category: 'Sri Lanka',
     readTime: '8 min',
+    author: 'SLAB Heritage Team',
     image: cover7,
   },
   {
@@ -87,6 +94,7 @@ export const blogPosts = [
       "The upcountry performing arts, including Ves dance, Pantheru, and the thunder of the geta beraya, are among Sri Lanka's most iconic. At our spring workshop, a visiting artist taught basics of Kandyan dance and explained how these forms survived colonialism and continue to inspire new generations.",
     category: 'Culture',
     readTime: '5 min',
+    author: 'SLAB Arts & Traditions',
     image: cover8,
   },
   {
@@ -97,6 +105,7 @@ export const blogPosts = [
       "The Tamil community has shaped Sri Lanka's north and east for millennia. In this roundtable, SLAB members from Jaffna and the Tamil diaspora shared family stories, the importance of Thai Pongal and Tamil New Year, and what it means to carry both Tamil and Lankan identity at Cal.",
     category: 'Sri Lanka',
     readTime: '6 min',
+    author: 'SLAB Roundtable Team',
     image: cover9,
   },
 ]
