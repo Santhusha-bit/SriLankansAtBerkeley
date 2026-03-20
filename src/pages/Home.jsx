@@ -12,10 +12,10 @@ import flyerAwurudu from '../../images/projects/awurudu/DSC_0251.jpg'
 import offerEvents from '../../images/projects/awurudu/DSC_0177.jpg'
 import offerCommunity from '../../images/projects/awurudu/DSC_0123.jpg'
 import offerHeritage from '../../images/projects/awurudu/DSC_0045.jpg'
-import highlightOcean from '../../images/projects/awurudu/DSC_0062.jpg'
-import highlightHistory from '../../images/projects/awurudu/DSC_0129.jpg'
-import highlightNature from '../../images/projects/awurudu/DSC_0077.jpg'
-import highlightTea from '../../images/projects/awurudu/DSC_0079.jpg'
+import highlightOcean from '../../images/pearl.jpg'
+import highlightHistory from '../../images/ancient.jpg'
+import highlightNature from '../../images/bio.jpg'
+import highlightTea from '../../images/tea.avif'
 
 // Ensures ESLint counts `motion` as used (JSX tags alone may not).
 const _MOTION = motion
