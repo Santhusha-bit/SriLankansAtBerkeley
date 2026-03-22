@@ -4,8 +4,6 @@ import calLogo from '../../images/cal.png'
 import slFlagLogo from '../../images/sl flag.png'
 import usFlagLogo from '../../images/us flag.png'
 
-const assetBase = import.meta.env.BASE_URL.replace(/\/?$/, '/')
-
 export default function Footer() {
   return (
     <footer className="footer">
@@ -24,7 +22,27 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3>Sri Lankans at Berkeley</h3>
-            <p>Celebrating culture, building community at UC Berkeley since our founding.</p>
+            <div className="footer-compliance" aria-label="Legal notices and hosting">
+              <p className="site-disclaimer site-disclaimer--footer">
+                We are a student group acting independently of the University of California. We take full
+                responsibility for our organization and this web site.
+              </p>
+              <a
+                href="https://www.ocf.berkeley.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ocf-banner-link"
+                aria-label="Hosted by the Open Computing Facility"
+              >
+                <img
+                  src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin.svg"
+                  alt=""
+                  className="ocf-banner-img"
+                  width={136}
+                  height={48}
+                />
+              </a>
+            </div>
           </motion.div>
 
           <motion.div

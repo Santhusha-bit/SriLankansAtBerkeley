@@ -613,7 +613,31 @@
 }
 
 /* ========== ABOUT PAGE / SECTION ========== */
-.about-content,
+.about-content {
+  padding: 2rem 0;
+}
+
+/* OCF hosted badge (image-only link, required for OCF virtual host) */
+.ocf-banner-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  border: 0;
+}
+.ocf-banner-link:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.ocf-banner-link:hover .ocf-banner-img {
+  opacity: 0.88;
+}
+.ocf-banner-img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
 .about-section { padding: 4rem 0 5rem; }
 .about-section .section-title { margin-bottom: 1.5rem; }
 .about-intro { margin-bottom: 3rem; }
@@ -1473,6 +1497,38 @@
   letter-spacing: 0.12em;
   opacity: 0.85;
   color: rgba(255, 255, 255, 0.9);
+}
+.site-disclaimer {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  text-align: center;
+}
+.footer-compliance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+.footer-compliance .site-disclaimer {
+  margin: 0;
+  padding: 0;
+  max-width: 42rem;
+  text-align: left;
+}
+.site-disclaimer--footer {
+  color: rgba(255, 255, 255, 0.92);
+}
+@media (max-width: 768px) {
+  .footer-compliance {
+    align-items: center;
+  }
+  .footer-compliance .site-disclaimer {
+    text-align: center;
+  }
 }
 .footer-bottom {
   max-width: 1100px;
