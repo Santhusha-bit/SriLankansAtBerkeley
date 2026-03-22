@@ -20,6 +20,7 @@ import teamSecretary from '../../images/team/secretary.png'
 import teamTreasurer from '../../images/team/treasurer.jpg'
 import teamMarketing from '../../images/team/marketing.jpg'
 import teamTech from '../../images/team/tech.jpg'
+import teamEvents from '../../images/team/events.jpg'
 import { blogPosts } from '../data/blogPosts'
 
 // Ensures ESLint counts `motion` as used (JSX tags alone may not).
@@ -64,6 +65,7 @@ const executiveTeam = [
   { name: 'Dinithi Jayakody', role: 'Co-President', initials: 'EM', photo: teamCoPresident },
   { name: 'Amisha Gupta', role: 'Secretary', initials: 'EX', photo: teamSecretary },
   { name: 'Dylan Jayalath', role: 'Treasurer', initials: 'ET', photo: teamTreasurer },
+  { name: 'Samodi Senadeeralage', role: 'Director of Events', initials: 'SS', photo: teamEvents },
   { name: 'Kiara Abhayaratne', role: 'Director of Marketing', initials: 'EC', photo: teamMarketing },
   { name: 'Santhusha Mudannayaka', role: 'Director of Technology', initials: 'CL', photo: teamTech },
 ]
