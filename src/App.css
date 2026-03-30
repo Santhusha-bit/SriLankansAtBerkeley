@@ -1092,6 +1092,7 @@
   flex-direction: column;
   gap: 1.25rem;
   align-items: stretch;
+  justify-content: center;
   min-width: 0;
   padding-right: 0.5rem;
 }
@@ -1136,7 +1137,11 @@
   .event-date-block { width: 100%; height: auto; padding: 0.75rem; flex-direction: row; gap: 0.5rem; }
   .event-flyer { flex-basis: auto; width: 100%; }
   .event-flyer img { height: 260px; }
-  .event-info { flex-basis: auto; width: 100%; }
+  .event-info {
+    flex-basis: auto;
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 /* Mobile layout tweaks */
