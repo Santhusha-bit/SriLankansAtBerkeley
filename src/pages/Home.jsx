@@ -43,7 +43,7 @@ const events = [
     title: 'Awurudu Festival 2026',
     date: 'Apr 26, 2026',
     time: '4:00 PM onwards',
-    location: 'UC Berkeley Glade',
+    location: 'Willard Park',
     description: 'Celebrate Sinhala & Tamil New Year with traditional games, kiribath, kavum, and performances. All are welcome: bring friends and good vibes!',
     type: 'Festival',
     flyer: flyerAwurudu,
