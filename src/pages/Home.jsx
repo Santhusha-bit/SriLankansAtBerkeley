@@ -33,7 +33,7 @@ const events = [
     title: 'Career Insight Panel',
     date: 'Apr 4, 2026',
     time: '12:00 PM - 2:00 PM',
-    location: 'UC Berkeley',
+    location: 'The Kittredge - Rooftop',
     description: 'Hear from Sri Lankan professionals and alumni about careers, internships, and navigating opportunities. Bring your questions and network with the community.',
     type: 'Panel',
     flyer: flyerCareerPanel,
