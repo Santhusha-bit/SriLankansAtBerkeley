@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "/",  // For github pages : "https://github.com/Santhusha-bit/SriLankansAtBerkeley"
+  "homepage": "/",  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
