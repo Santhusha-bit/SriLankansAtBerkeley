@@ -499,6 +499,7 @@ export default function Home() {
                     </span>
                   </a>
 
+                  {/*
                   <a
                     href="https://www.linkedin.com"
                     target="_blank"
@@ -516,6 +517,7 @@ export default function Home() {
                       <span>Connect with us</span>
                     </span>
                   </a>
+                  */}
                 </div>
               </div>
             </motion.div>

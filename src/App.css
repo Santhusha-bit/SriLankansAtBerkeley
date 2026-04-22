@@ -914,12 +914,25 @@
 
 @media (max-width: 768px) {
   .blog-preview-section .blog-card {
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .blog-preview-section .blog-card-image {
-    width: 100%;
+    width: 100% !important;
+    flex: 0 0 auto !important;
     min-height: 200px;
-    height: 200px;
+    height: 200px !important;
+  }
+  .blog-preview-section .blog-card-content {
+    padding: 1.1rem 1rem 1.25rem;
+  }
+  .blog-preview-section .blog-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+  .blog-preview-section .blog-meta {
+    display: block;
+    line-height: 1.4;
   }
 }
 
