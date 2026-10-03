@@ -35,9 +35,22 @@ import { blogPosts } from '../data/blogPosts'
 // Ensures ESLint counts `motion` as used (JSX tags alone may not).
 const _MOTION = motion
 
-const events = [
+const upcomingEvents = [
   {
     id: 1,
+    title: 'Team Get Together',
+    date: 'Oct 16, 2026',
+    time: '5:00 PM onwards',
+    location: 'TBD',
+    description: 'Kick off the Fall 2026 term with the new Executive Board. An informal get together to meet the team, plan the semester, and share good food and good company.',
+    type: 'Social',
+    flyer: offerCommunity,
+  },
+]
+
+const pastEvents = [
+  {
+    id: 101,
     title: 'Career Insight Panel',
     date: 'Apr 4, 2026',
     time: '12:00 PM - 2:00 PM',
@@ -47,7 +60,7 @@ const events = [
     flyer: flyerCareerPanel,
   },
   {
-    id: 2,
+    id: 102,
     title: 'Awurudu Festival 2026',
     date: 'Apr 26, 2026',
     time: '4:00 PM onwards',
@@ -58,7 +71,7 @@ const events = [
   },
 ]
 
-const eventColors = { Panel: 'var(--green)', Festival: 'var(--saffron)' }
+const eventColors = { Panel: 'var(--green)', Festival: 'var(--saffron)', Social: 'var(--maroon)' }
 
 const cultureItems = [
   { image: cultureCuisine, title: 'Cuisine', text: 'Rice & curry, hoppers, kottu, string hoppers, and sweet treats like kiribath and kavum.' },
@@ -407,8 +420,10 @@ export default function Home() {
             Events
           </motion.h2>
           <p className="section-subtitle">Upcoming celebrations, meetings, and gatherings</p>
+
+          <h3 className="events-group-title">Upcoming Events</h3>
           <div className="events-list">
-            {events.map((event, i) => (
+            {upcomingEvents.map((event, i) => (
               <motion.div
                 key={event.id}
                 className="event-card"
@@ -418,9 +433,50 @@ export default function Home() {
                 transition={{ delay: 0.1 * i }}
                 whileHover={{ x: 8 }}
               >
-                <div className="event-flyer">
-                  <img src={event.flyer} alt="" />
+                {event.flyer && (
+                  <div className="event-flyer">
+                    <img src={event.flyer} alt="" />
+                  </div>
+                )}
+                <div className="event-info">
+                  <div
+                    className="event-date-block"
+                    style={{ borderColor: eventColors[event.type] }}
+                  >
+                    <span className="event-day">{event.date.split(' ')[1]?.replace(',', '')}</span>
+                    <span className="event-month">{event.date.split(' ')[0]}</span>
+                  </div>
+                  <div className="event-details">
+                    <span className="event-type" style={{ color: eventColors[event.type] }}>{event.type}</span>
+                    <h3>{event.title}</h3>
+                    <p className="event-desc">{event.description}</p>
+                    <div className="event-meta">
+                      <span>🕐 {event.time}</span>
+                      <span>📍 {event.location}</span>
+                    </div>
+                  </div>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <h3 className="events-group-title">Past Events</h3>
+          <div className="events-list">
+            {pastEvents.map((event, i) => (
+              <motion.div
+                key={event.id}
+                className="event-card is-past"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                whileHover={{ x: 8 }}
+              >
+                {event.flyer && (
+                  <div className="event-flyer">
+                    <img src={event.flyer} alt="" />
+                  </div>
+                )}
                 <div className="event-info">
                   <div
                     className="event-date-block"

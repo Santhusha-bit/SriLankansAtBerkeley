@@ -179,6 +179,11 @@ html[data-theme='dark'] {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
 }
 
+[data-theme='dark'] .events-group-title {
+  color: var(--maroon-light);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
 [data-theme='dark'] .feature-card-image,
 [data-theme='dark'] .blog-card-image,
 [data-theme='dark'] .culture-card-image,
