@@ -14,14 +14,22 @@ import flyerAwurudu from '../../images/projects/awurudu/DSC_0251.jpg'
 import offerEvents from '../../images/projects/awurudu/DSC_0177.jpg'
 import offerCommunity from '../../images/projects/awurudu/DSC_0123.jpg'
 import offerHeritage from '../../images/projects/awurudu/DSC_0045.jpg'
-import teamPresident from '../../images/team/president.jpg'
-import teamCoPresident from '../../images/team/co-president.jpg'
-import teamSecretary from '../../images/team/secretary.png'
-import teamTreasurer from '../../images/team/treasurer.jpg'
-import teamMarketing from '../../images/team/marketing.jpg'
-import teamTech from '../../images/team/tech.jpg'
-import teamEvents from '../../images/team/events.jpg'
-import teamAffairs from '../../images/team/affairs.jpeg'
+import teamPresident from '../../images/team/spring 2026/president.jpg'
+import teamCoPresident from '../../images/team/spring 2026/co-president.jpg'
+import teamSecretary from '../../images/team/spring 2026/secretary.png'
+import teamTreasurer from '../../images/team/spring 2026/treasurer.jpg'
+import teamMarketing from '../../images/team/spring 2026/marketing.jpg'
+import teamTech from '../../images/team/spring 2026/tech.jpg'
+import teamEvents from '../../images/team/spring 2026/events.jpg'
+import teamAffairs from '../../images/team/spring 2026/affairs.jpeg'
+import fallStephan from '../../images/team/fall 2026/president - stephan.jpg'
+import fallDylan from '../../images/team/fall 2026/co-president - dylan.jpg'
+import fallSanthusha from '../../images/team/fall 2026/treasury - santhusha.jpg'
+import fallSamodi from '../../images/team/fall 2026/events - samodi.jpg'
+import fallSen from '../../images/team/fall 2026/marketing - sen.jpg'
+import fallSamara from '../../images/team/fall 2026/marketing - samara.jpg'
+import fallPranathi from '../../images/team/fall 2026/events - pranathi.jpg'
+import fallRahul from '../../images/team/fall 2026/events - rahul.jpg'
 import { blogPosts } from '../data/blogPosts'
 
 // Ensures ESLint counts `motion` as used (JSX tags alone may not).
@@ -61,20 +69,41 @@ const cultureItems = [
   { image: cultureHeritage, title: 'Heritage Sites', text: 'Ancient capitals, sacred stupas, and UNESCO World Heritage landmarks tell thousands of years of island history.' },
 ]
 
-const executiveTeam = [
-  { name: 'Stephan Siyambalapitiya', role: 'Co-President', initials: 'SS', photo: teamPresident },
-  { name: 'Dinithi Jayakody', role: 'Co-President', initials: 'EM', photo: teamCoPresident },
-  { name: 'Amisha Gupta', role: 'Secretary', initials: 'EX', photo: teamSecretary },
-  { name: 'Dylan Jayalath', role: 'Treasurer', initials: 'ET', photo: teamTreasurer },
-  { name: 'Samodi Senadeeralage', role: 'Director of Events', initials: 'SS', photo: teamEvents },
-  { name: 'Kiara Abhayaratne', role: 'Director of Marketing', initials: 'EC', photo: teamMarketing },
-  { name: 'Shanaya Wickremesinghe', role: 'Director of Internal Affairs', initials: 'IA', photo: teamAffairs },
-  { name: 'Santhusha Mudannayaka', role: 'Director of Technology', initials: 'CL', photo: teamTech },
+const execBoards = [
+  {
+    term: 'Fall 2026',
+    members: [
+      { name: 'Stephan Siyambalapitiya', role: 'Co-President', initials: 'SS', photo: fallStephan },
+      { name: 'Dylan Jayalath', role: 'Co-President', initials: 'DJ', photo: fallDylan },
+      { name: 'Santhusha Mudannayaka', role: 'Treasury & Technology', initials: 'SM', photo: fallSanthusha },
+      { name: 'Samodi Senadeeralage', role: 'Events', initials: 'SS', photo: fallSamodi },
+      { name: 'Sen Yakandawala', role: 'Marketing & Communications', initials: 'SY', photo: fallSen },
+      { name: 'Samara Wijesekera', role: 'Marketing & Communications', initials: 'SW', photo: fallSamara },
+      { name: 'Pranathi', role: 'Events', initials: 'PR', photo: fallPranathi },
+      { name: 'Rahul Dissanayake', role: 'Events', initials: 'RD', photo: fallRahul },
+      { name: 'Open Position', role: 'Cultural Programs', initials: '+' },
+      { name: 'Open Position', role: 'Membership & Outreach', initials: '+' },
+    ],
+  },
+  {
+    term: 'Spring 2026',
+    members: [
+      { name: 'Stephan Siyambalapitiya', role: 'Co-President', initials: 'SS', photo: teamPresident },
+      { name: 'Dinithi Jayakody', role: 'Co-President', initials: 'EM', photo: teamCoPresident },
+      { name: 'Amisha Gupta', role: 'Secretary', initials: 'EX', photo: teamSecretary },
+      { name: 'Dylan Jayalath', role: 'Treasurer', initials: 'ET', photo: teamTreasurer },
+      { name: 'Samodi Senadeeralage', role: 'Director of Events', initials: 'SS', photo: teamEvents },
+      { name: 'Kiara Abhayaratne', role: 'Director of Marketing', initials: 'EC', photo: teamMarketing },
+      { name: 'Shanaya Wickremesinghe', role: 'Director of Internal Affairs', initials: 'IA', photo: teamAffairs },
+      { name: 'Santhusha Mudannayaka', role: 'Director of Technology', initials: 'CL', photo: teamTech },
+    ],
+  },
 ]
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [activeBoard, setActiveBoard] = useState(0)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -428,10 +457,23 @@ export default function Home() {
           </motion.h2>
           <p className="section-subtitle">Meet the board supporting SLAB</p>
 
+          <div className="exec-term-toggle">
+            {execBoards.map((board, i) => (
+              <button
+                key={board.term}
+                type="button"
+                className={`exec-term-btn${activeBoard === i ? ' active' : ''}`}
+                onClick={() => setActiveBoard(i)}
+              >
+                Executive Board - {board.term}
+              </button>
+            ))}
+          </div>
+
           <div className="exec-grid">
-            {executiveTeam.map((person, i) => (
+            {execBoards[activeBoard].members.map((person, i) => (
               <motion.div
-                key={person.name}
+                key={`${execBoards[activeBoard].term}-${person.name}-${person.role}`}
                 className="exec-card"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -440,7 +482,11 @@ export default function Home() {
                 whileHover={{ y: -6 }}
               >
                 <div className="exec-avatar">
-                  <img src={person.photo} alt={`${person.name} photo`} />
+                  {person.photo ? (
+                    <img src={person.photo} alt={`${person.name} photo`} />
+                  ) : (
+                    <span className="exec-initials">{person.initials}</span>
+                  )}
                 </div>
                 <h4>{person.name}</h4>
                 <p>{person.role}</p>

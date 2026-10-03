@@ -992,6 +992,38 @@
 /* ========== EXECUTIVE TEAM ========== */
 .exec-team-section { padding: 4rem 0 5rem; }
 .exec-team-section .section-title { margin-bottom: 1.25rem; }
+.exec-term-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 2.5rem;
+}
+.exec-term-btn {
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(141, 21, 58, 0.3);
+  background: #fff;
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.exec-term-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(141, 21, 58, 0.15);
+}
+.exec-term-btn.active {
+  background: var(--maroon);
+  color: #fff;
+  border-color: var(--maroon);
+}
+.exec-initials {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--maroon);
+}
 .exec-grid {
   display: flex;
   flex-wrap: wrap;

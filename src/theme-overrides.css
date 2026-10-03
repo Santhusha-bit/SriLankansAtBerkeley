@@ -234,3 +234,16 @@ html[data-theme='dark'] {
   border-color: rgba(141, 21, 58, 0.35) !important;
   color: var(--maroon-light) !important;
 }
+[data-theme='dark'] .exec-initials {
+  color: var(--maroon-light) !important;
+}
+[data-theme='dark'] .exec-term-btn {
+  background: rgba(24, 24, 32, 0.9) !important;
+  color: var(--maroon-light) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+[data-theme='dark'] .exec-term-btn.active {
+  background: var(--maroon) !important;
+  color: #fff !important;
+  border-color: var(--maroon) !important;
+}
