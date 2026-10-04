@@ -90,7 +90,7 @@ const execBoards = [
       { name: 'Dylan Jayalath', role: 'Co-President', initials: 'DJ', photo: fallDylan },
       { name: 'Santhusha Mudannayaka', role: 'Treasury & Technology', initials: 'SM', photo: fallSanthusha },
       { name: 'Samodi Senadeeralage', role: 'Events', initials: 'SS', photo: fallSamodi },
-      { name: 'Sen Yakandawala', role: 'Marketing & Communications', initials: 'SY', photo: fallSen },
+      { name: 'Senhus Yakandawala', role: 'Marketing & Communications', initials: 'SY', photo: fallSen },
       { name: 'Samara Wijesekera', role: 'Marketing & Communications', initials: 'SW', photo: fallSamara },
       { name: 'Pranathi Senthil-Kumaran', role: 'Events', initials: 'PS', photo: fallPranathi },
       { name: 'Rahul Dissanayake', role: 'Events', initials: 'RD', photo: fallRahul },
