@@ -94,8 +94,6 @@ const execBoards = [
       { name: 'Samara Wijesekera', role: 'Marketing & Communications', initials: 'SW', photo: fallSamara },
       { name: 'Pranathi Senthil-Kumaran', role: 'Events', initials: 'PS', photo: fallPranathi },
       { name: 'Rahul Dissanayake', role: 'Events', initials: 'RD', photo: fallRahul },
-      { name: 'Open Position', role: 'Cultural Programs', initials: '+' },
-      { name: 'Open Position', role: 'Membership & Outreach', initials: '+' },
     ],
   },
   {
